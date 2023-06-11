@@ -72,25 +72,24 @@ def app():
   st.write("This bot can answer questions about the history, mission, vision, goals, purpose, objectives, innovations, milestones and other information specifically about USPF.")
 
   # Create a multiline text field
-    user_input = st.text_area('Input your question:', height=5)
+  user_input = st.text_area('Input your question:', height=5)
 
-    # Display the text when the user submits the form
-    if st.button('Submit'):
-        history = append_history(history, ('User: ' + user_input))
-        output = get_reply(user_input)
-        history = append_history(history, ('Auggie: ' + output))
-        for item in range(len(history)):
-            st.write(history[item])
+  # Display the text when the user submits the form
+  if st.button('Submit'):
+    history = append_history(history, ('User: ' + user_input))
+    output = get_reply(user_input)
+    history = append_history(history, ('Auggie: ' + output))
+    for item in range(len(history)):
+      st.write(history[item])
 
-    st.write("-----------\n\nThis project of Dan Chavez for USPF uses generative AI enhanced with specific knowledge on a set of topics. Like ChatGPT, the bot can engage the user in a conversation. Using prompt engineering, I trained this AI with specific information beyond the general knowledge base of ChatGPT.")
+  st.write("-----------\n\nThis project of Dan Chavez for USPF uses generative AI enhanced with specific knowledge on a set of topics. Like ChatGPT, the bot can engage the user in a conversation. Using prompt engineering, I trained this AI with specific information beyond the general knowledge base of ChatGPT.")
                 
-    st.write('\n\n\n© 2023 University of Southern Philippines Foundation & Dan Chavez.')
-    st.write('\n\n\n*Special thanks to Mr. Louie Cervantes*')
-    st.write('\n\n\nDisclaimer: Auggie may produce inaccurate information about people, places, or facts especially if the question is outside the scope of topics it was trained on.')
-    text = "*USPF at the forefront of AI-research in Central Visayas.*"
-    st.markdown(text)
+  st.write('\n\n\n© 2023 University of Southern Philippines Foundation & Dan Chavez.')
+  st.write('\n\n\n*Special thanks to Mr. Louie Cervantes*')
+  st.write('\n\n\nDisclaimer: Auggie may produce inaccurate information about people, places, or facts especially if the question is outside the scope of topics it was trained on.')
+  text = "*USPF at the forefront of AI-research in Central Visayas.*"
+  st.markdown(text)
 
 # Run the app
 if __name__ == "__main__":
-    app()
-  
+  app()
